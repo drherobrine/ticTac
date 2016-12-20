@@ -49,30 +49,30 @@ print("%s begins!"%starter)
 
 def winCheck():
     #Check Horizontal wins
-    if instances[0]._isCross and instances[1]._isCross and instances[2]._isCross or instances[3]._isCross and instances[4]._isCross and instances[5]._isCross or instances[6]._isCross and instances[7]._isCross and instances[8]._isCross:
+    if (instances[0]._isCross and instances[1]._isCross and instances[2]._isCross) or (instances[3]._isCross and instances[4]._isCross and instances[5]._isCross) or (instances[6]._isCross and instances[7]._isCross and instances[8]._isCross):
         print("You won!")
         return "win"
     #Check for Vertical wins
-    elif instances[0]._isCross and instances[3]._isCross and instances[6]._isCross or instances[1]._isCross and instances[4]._isCross and instances[7]._isCross or instances[2]._isCross and instances[5]._isCross and instances[8]._isCross:
+    elif (instances[0]._isCross and instances[3]._isCross and instances[6]._isCross) or (instances[1]._isCross and instances[4]._isCross and instances[7]._isCross) or (instances[2]._isCross and instances[5]._isCross and instances[8]._isCross):
         print("You won!")
         return "win"
     #Check for diagonal wins
-    elif instances[0]._isCross and instances[4]._isCross and instances[8]._isCross or instances[2]._isCross and instances[4]._isCross and instances[6]._isCross:
+    elif (instances[0]._isCross and instances[4]._isCross and instances[8]._isCross) or (instances[2]._isCross and instances[4]._isCross and instances[6]._isCross):
         print("You won!")
         return "win"
 
 
     # Check Horizontal losses
-    if instances[0]._isCross and instances[1]._isCircle and instances[2]._isCircle or instances[3]._isCircle and instances[4]._isCircle and instances[5]._isCircle or instances[6]._isCircle and instances[7]._isCircle and instances[8]._isCircle:
+    if (instances[0]._isCircle and instances[1]._isCircle and instances[2]._isCircle) or (instances[3]._isCircle and instances[4]._isCircle and instances[5]._isCircle) or instances[6]._isCircle and (instances[7]._isCircle and instances[8]._isCircle):
         print("You lost. :(")
         return "win"
     # Check for Vertical losses
-    elif instances[0]._isCross and instances[3]._isCircle and instances[6]._isCircle or instances[1]._isCircle and instances[4]._isCircle and instances[7]._isCircle or instances[2]._isCircle and instances[5]._isCircle and instances[8]._isCircle:
-        print("You lost. :(!")
+    elif (instances[0]._isCircle and instances[3]._isCircle and instances[6]._isCircle) or (instances[1]._isCircle and instances[4]._isCircle and instances[7]._isCircle) or (instances[2]._isCircle and instances[5]._isCircle and instances[8]._isCircle):
+        print("You lost. :(")
         return "win"
     # Check for diagonal losses
-    elif instances[0]._isCircle and instances[4]._isCircle and instances[8]._isCircle or instances[2]._isCircle and instances[4]._isCircle and instances[6]._isCircle:
-        print("You lost. :(")
+    elif (instances[0]._isCircle and instances[4]._isCircle and instances[8]._isCircle) or (instances[2]._isCircle and instances[4]._isCircle and instances[6]._isCircle):
+        print("You lost miserably. :(")
         return "win"
 
 
@@ -117,8 +117,7 @@ def plrMove():
     instances[playerNumber].isCross = True
     instances[playerNumber].isOccupied = True
 
-#instances[3]._isCross = True
-#instances[3]._isOccupied = True
+
 
 
 while True:
